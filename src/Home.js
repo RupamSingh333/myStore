@@ -1,11 +1,12 @@
-import React from "react";
 import HeroSection from "./components/HeroSection"
 import Services from "./components/Services";
 import Trusted from "./components/Trusted";
 
 const Home = () => {
   const data = {
-    name: "Bhawani Elect."
+    title:"Welcome To",
+    name: "Bhawani Electronics.",
+    paragraph:'Lorem ipsum dolor sit amet consectetur adipisicing elit.Molestias atque temporibus veniam doloribus libero ad error omnis voluptates animi! Suscipit sapiente.'
   }
   return(
   <>

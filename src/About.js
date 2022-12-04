@@ -3,7 +3,9 @@ import  HeroSection  from "./components/HeroSection";
 
 const About = () => {
   const data ={
-    name:"Bhawani Electronics",
+    title:"About Us",
+    name: "Bhawani Electronics.",
+    paragraph:'Lorem ipsum dolor sit amet consectetur adipisicing elit.Molestias atque temporibus veniam doloribus libero ad error omnis voluptates animi! Suscipit sapiente sit amet consectetur adipisicing elit Molestias atque temporibus veniam doloribus libero ad error omnis voluptates animi!.'
   };
   return<HeroSection myData={data} />;
 };

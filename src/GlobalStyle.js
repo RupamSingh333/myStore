@@ -1,7 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 
 export const GlobalStyle = createGlobalStyle`
-
 * {
   margin: 0;
   padding: 0;
@@ -9,9 +8,10 @@ export const GlobalStyle = createGlobalStyle`
   font-family: "Work Sans", sans-serif;
 }
 
-
 html {
-  font-size: 62.5%;
+  // font-size: 62.5%;
+  font-size: 45.5%;
+
   /* scroll-behavior: smooth; */
   /* 1rem = 10px */
   overflow-x: hidden;
@@ -49,7 +49,7 @@ h4 {
 
 h1 {
   color: ${({ theme }) => theme.colors.heading};
-  font-size: 6rem;
+  font-size: 5rem;
   font-weight: 900;
 }
 
@@ -85,7 +85,7 @@ li {
 ${"" /* resuable code section  */}
 
 .container {
-  max-width: 120rem;
+  max-width: 148rem;
   margin: 0 auto;
 }
 

@@ -4,18 +4,16 @@ import styled from "styled-components";
 import { Button } from "../styles/Button";
 
 const HeroSection = ({ myData }) => {
-  const { name } = myData;
+  const { name,paragraph,title } = myData;
   return (
     <Wrapper>
       <div className="container">
         <div className="grid grid-two-column">
           <div className="hero-section-data">
-            <p className="intro-data"> Welcome to </p>
+            <p className="intro-data">{title} </p>
             <h1> {name} </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.Molestias
-              atque temporibus veniam doloribus libero ad error omnis voluptates
-              animi! Suscipit sapiente.
+              {paragraph}
             </p>
             <NavLink>
               <Button>show now </Button>
