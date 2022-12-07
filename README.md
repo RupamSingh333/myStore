@@ -1,4 +1,4 @@
-# Welcome to Thapa Technical React Ecommerce Website Series
+# Welcome to Rupam Technical React Ecommerce Website Series
 
 ## Follow the 3 Steps and you are good to go. 
 
@@ -14,7 +14,5 @@
 
 ------------ 
 
-- [Main Starter Files of React Ecom Source Code](https://github.com/thapatechnical/thapareactecom/blob/main/README.md)
-
-- [Till Video 6 Source Code - Responsive Navbar](https://github.com/thapatechnical/thapareactecom/tree/react_ecom_navbar_v6) 
+- [Main Starter Files of React Ecom Source Code]()
 
