@@ -2,12 +2,13 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Nav from "./Nav";
+const SITE_URL = "http://localhost:3000/";
 
 const Header = () => {
   return (
     <MainHeader>
       <NavLink to="/">
-        <img src="./images/logo.png" className="my-logo" alt="my logo img" />
+        <img src={SITE_URL+"images/logo.png"} className="my-logo" alt="my logo img" />
       </NavLink>
       <Nav />
     </MainHeader>

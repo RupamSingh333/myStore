@@ -9,13 +9,16 @@ import FormatPrice from "./Helpers/FormatPrice";
 import { MdSecurity } from "react-icons/md";
 import { TbTruckDelivery, TbReplace } from "react-icons/tb";
 import Star from "./components/Star";
+import AddToCart from "./components/AddToCart";
+import { Vortex } from "react-loader-spinner";
 
 const API = "https://api.pujakaitem.com/api/products";
+// const API = "http://localhost:3001/api/v1/books/searchBook";
 
 const SingleProduct = () => {
   const { getSingleProduct, isSingleLoading, singleProduct } =
     useProductContext();
-
+  // console.log(singleProduct.data);
   const { id } = useParams();
 
   const {
@@ -34,9 +37,19 @@ const SingleProduct = () => {
   useEffect(() => {
     getSingleProduct(`${API}?id=${id}`);
   }, []);
-
+  const style = { position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)" };
   if (isSingleLoading) {
-    return <div className="page_loading">Loading.....</div>;
+    return (
+      <Vortex
+      visible={true}
+      height="80"
+      width="80"
+      ariaLabel="vortex-loading"
+      wrapperStyle={{style}}
+      wrapperClass="vortex-wrapper"
+      colors={["red", "green", "blue", "yellow", "orange", "purple"]}
+    />
+    );
   }
 
   return (
@@ -53,7 +66,7 @@ const SingleProduct = () => {
           <div className="product-data">
             <h2>{name}</h2>
             <p>{stars}</p>
-            <Star stars={stars} reviews= {reviews} />
+            <Star stars={stars} reviews={reviews} />
             <p className="product-data-price">
               MRP:
               <del>
@@ -77,7 +90,7 @@ const SingleProduct = () => {
 
               <div className="product-warranty-data">
                 <TbTruckDelivery className="warranty-icon" />
-                <p>Thapa Delivered </p>
+                <p>Rupam Delivered </p>
               </div>
 
               <div className="product-warranty-data">
@@ -98,6 +111,8 @@ const SingleProduct = () => {
                 Brand :<span> {company} </span>
               </p>
             </div>
+            <hr />
+            {stock > 0 && <AddToCart product={singleProduct} />}
           </div>
         </div>
       </Container>
@@ -108,6 +123,9 @@ const SingleProduct = () => {
 const Wrapper = styled.section`
   .container {
     padding: 9rem 0;
+  }
+  .vortex-wrapper{
+    textAlign: 'center'
   }
   .product_images {
     display: flex;

@@ -1,36 +1,14 @@
-import { useProductContext } from "../context/ProductContext";
+import React from "react";
 import styled from "styled-components";
 import Product from "./Product";
-import { Vortex } from "react-loader-spinner";
-// import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
-const FeatureProducts = () => {
-  const { isLoading, featureProducts } = useProductContext();
-const style = { position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)" };
-  if (isLoading) {
-    return (
-      <Vortex
-        visible={true}
-        height="80"
-        width="80"
-        ariaLabel="vortex-loading"
-        wrapperStyle={{style}}
-        wrapperClass="vortex-wrapper"
-        colors={["red", "green", "blue", "yellow", "orange", "purple"]}
-      />
-    );
-  }
-
+const GridView = ({ products }) => {
   return (
     <Wrapper className="section">
-      <div className="container">
-        <div className="intro-data">Check Now!</div>
-        <div className="common-heading">Our Feature Services</div>
-        <div className="grid grid-three-column">
-          {featureProducts.map((curElem) => {
-            return <Product key={curElem.id} {...curElem} />;
-          })}
-        </div>
+      <div className="container grid grid-three-column">
+        {products.map((curElem) => {
+          return <Product key={curElem.id} {...curElem} />;
+        })}
       </div>
     </Wrapper>
   );
@@ -38,9 +16,11 @@ const style = { position: "fixed", top: "50%", left: "50%", transform: "translat
 
 const Wrapper = styled.section`
   padding: 9rem 0;
-  background-color: ${({ theme }) => theme.colors.bg};
   .container {
     max-width: 120rem;
+  }
+  .grid {
+    gap: 3.2rem;
   }
   figure {
     width: auto;
@@ -73,23 +53,12 @@ const Wrapper = styled.section`
       height: 20rem;
       transition: all 0.2s linear;
     }
-    .caption {
-      position: absolute;
-      top: 15%;
-      right: 10%;
-      text-transform: uppercase;
-      background-color: ${({ theme }) => theme.colors.bg};
-      color: ${({ theme }) => theme.colors.helper};
-      padding: 0.8rem 2rem;
-      font-size: 1.2rem;
-      border-radius: 2rem;
-    }
   }
   .card {
-    background-color: #fff;
+    background-color: ${({ theme }) => theme.colors.bg};
     border-radius: 1rem;
     .card-data {
-      padding: 0 2rem;
+      padding: 0 1rem;
     }
     .card-data-flex {
       margin: 2rem 0;
@@ -97,12 +66,12 @@ const Wrapper = styled.section`
       justify-content: space-between;
       align-items: center;
     }
+    .card-data--price {
+      color: ${({ theme }) => theme.colors.helper};
+    }
     h3 {
       color: ${({ theme }) => theme.colors.text};
       text-transform: capitalize;
-    }
-    .card-data--price {
-      color: ${({ theme }) => theme.colors.helper};
     }
     .btn {
       margin: 2rem auto;
@@ -125,4 +94,4 @@ const Wrapper = styled.section`
   }
 `;
 
-export default FeatureProducts;
+export default GridView;
