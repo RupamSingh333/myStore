@@ -126,7 +126,7 @@ const filterReducer = (state, action) => {
           category: "all",
           company: "all",
           color: "all",
-          maxPrice: state.filters.maxPrice,
+          maxPrice: 0,
           price: state.filters.maxPrice,
           minPrice: state.filters.minPrice,
         },
