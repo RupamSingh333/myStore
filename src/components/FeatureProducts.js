@@ -1,25 +1,25 @@
 import { useProductContext } from "../context/ProductContext";
 import styled from "styled-components";
 import Product from "./Product";
-import { Vortex } from "react-loader-spinner";
+// import { Vortex } from "react-loader-spinner";
 // import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const FeatureProducts = () => {
   const { isLoading, featureProducts } = useProductContext();
 const style = { position: "fixed", top: "50%", left: "50%", transform: "translate(-50%, -50%)" };
-  if (isLoading) {
-    return (
-      <Vortex
-        visible={true}
-        height="80"
-        width="80"
-        ariaLabel="vortex-loading"
-        wrapperStyle={{style}}
-        wrapperClass="vortex-wrapper"
-        colors={["red", "green", "blue", "yellow", "orange", "purple"]}
-      />
-    );
-  }
+  // if (isLoading) {
+  //   return (
+  //     <Vortex
+  //       visible={true}
+  //       height="80"
+  //       width="80"
+  //       ariaLabel="vortex-loading"
+  //       wrapperStyle={{style}}
+  //       wrapperClass="vortex-wrapper"
+  //       colors={["red", "green", "blue", "yellow", "orange", "purple"]}
+  //     />
+  //   );
+  // }
 
   return (
     <Wrapper className="section">
