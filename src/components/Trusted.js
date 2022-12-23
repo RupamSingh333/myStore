@@ -1,4 +1,5 @@
 import styled from "styled-components";
+const SITE_URL = "http://localhost:3000/";
 
 const Trusted = () => {
   return (
@@ -9,31 +10,31 @@ const Trusted = () => {
           {/* my 1st img  */}
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image2.png"
+              src={SITE_URL+"images/image1.png"}
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image3.png"
+              src={SITE_URL+"images/image2.png"}
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image4.png"
+              src={SITE_URL+"images/image3.png"}
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image6.png"
+             src={SITE_URL+"images/image4.png"}
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src="https://raw.githubusercontent.com/solodev/infinite-logo-carousel/master/images/image8.png"
+              src={SITE_URL+"images/image5.png"}
               alt="trusted-brands"
             />
           </div>
