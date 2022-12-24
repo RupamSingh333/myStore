@@ -4,9 +4,11 @@ import { FaCheck } from "react-icons/fa";
 import CartAmountToggle from "./CartAmountToggle";
 import { NavLink } from "react-router-dom";
 import { Button } from "../styles/Button";
+import { useCartContext } from "../context/Cart_Context";
 
 const AddToCart = ({ product }) => {
   const { id, colors, stock } = product;
+  const {addToCart} = useCartContext();
 
   const [color, setColor] = useState(colors[0]);
   const [amount, setAmount] = useState(1);
