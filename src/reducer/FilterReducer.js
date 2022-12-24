@@ -137,4 +137,4 @@ const filterReducer = (state, action) => {
   }
 };
 
-export default filterReducer; 
+export default filterReducer;

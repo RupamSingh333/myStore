@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import styled from "styled-components";
 import { FaCheck } from "react-icons/fa";
@@ -46,7 +45,7 @@ const AddToCart = ({ product }) => {
         setIncrease={setIncrease}
       />
 
-      <NavLink to="/cart">
+      <NavLink to="/cart" onClick={() => addToCart(id, color, amount, product)}>
         <Button className="btn">Add To Cart</Button>
       </NavLink>
     </Wrapper>
