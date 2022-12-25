@@ -3,15 +3,18 @@ import { useCartContext } from "./context/Cart_Context";
 import CartItem from "./components/CartItem";
 import { NavLink } from "react-router-dom";
 import { Button } from "./styles/Button";
+import FormatPrice from "./Helpers/FormatPrice";
 
 const Cart = () => {
-  const { cart, clearCart } = useCartContext();
-  // console.log("🚀 ~ file: Cart.js ~ line 6 ~ Cart ~ cart", cart.length);  	
-  
-  if(cart.length ===0){
-    return (<EmptyDiv>
-      <h3>No Items in Cart</h3>
-    </EmptyDiv>)
+  const { cart, clearCart, total_price, shipping_fee } = useCartContext();
+  // console.log("🚀 ~ file: Cart.js ~ line 6 ~ Cart ~ cart", cart.length);
+
+  if (cart.length === 0) {
+    return (
+      <EmptyDiv>
+        <h3>No Items in Cart</h3>
+      </EmptyDiv>
+    );
   }
 
   return (
@@ -36,7 +39,35 @@ const Cart = () => {
           <NavLink to="/products">
             <Button>Continue Shopping</Button>
           </NavLink>
-          <Button className="btn btn-clear" onClick={clearCart}>Clear Cart</Button>
+          <Button className="btn btn-clear" onClick={clearCart}>
+            Clear Cart
+          </Button>
+        </div>
+
+        {/* order summary  */}
+                {/* order total_amount */}
+                <div className="order-total--amount">
+          <div className="order-total--subdata">
+            <div>
+              <p>subtotal:</p>
+              <p>
+                <FormatPrice price={total_price} />
+              </p>
+            </div>
+            <div>
+              <p>shipping fee:</p>
+              <p>
+                <FormatPrice price={shipping_fee} />
+              </p>
+            </div>
+            <hr />
+            <div>
+              <p>order total:</p>
+              <p>
+                <FormatPrice price={shipping_fee + total_price} />
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </Wrapper>
@@ -44,16 +75,14 @@ const Cart = () => {
 };
 
 const EmptyDiv = styled.div`
-display:grid;
-place-items:center;
-height:50vh;
-
-h3{
-  font-size:4.2rem;
-  text-transform:capitalize;
-  font-weight:300;
-}
-
+  display: grid;
+  place-items: center;
+  height: 50vh;
+  h3 {
+    font-size: 4.2rem;
+    text-transform: capitalize;
+    font-weight: 300;
+  }
 `;
 
 const Wrapper = styled.section`

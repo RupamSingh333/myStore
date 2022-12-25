@@ -3,9 +3,12 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
+import { Button } from "../styles/Button";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const Nav = () => {
   const [menuIcon, setMenuIcon] = useState();
+  const { user, isAuthenticated, isLoading ,loginWithRedirect } = useAuth0();  
   const Nav = styled.nav`
     .navbar-lists {
       display: flex;
@@ -196,6 +199,11 @@ const Nav = () => {
               Contact
             </NavLink>
           </li>
+
+          <li>
+            <Button onClick={()=>loginWithRedirect()} >Log In</Button>
+          </li>
+
           <li>
             <NavLink to="/cart" className="navbar-link cart-trolley--link">
               <FiShoppingCart className="cart-trolley" />
