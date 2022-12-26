@@ -12,31 +12,31 @@ const Trusted = () => {
           {/* my 1st img  */}
           <div className="slide">
             <img
-              src=".images/image1.png"
+              src="../images/image1.png"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src=".images/image2.png"
+              src="../images/image2.png"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src=".images/image3.png"
+              src="../images/image3.png"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-             src=".images/image4.png"
+             src="../images/image4.png"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src=".images/image5.png"
+              src="../images/image5.png"
               alt="trusted-brands"
             />
           </div>
