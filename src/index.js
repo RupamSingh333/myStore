@@ -7,11 +7,13 @@ import { AppProvider } from "./context/ProductContext";
 import { FilterContextProvider } from "./context/Filter_Context";
 import { CartProvider } from "./context/Cart_Context";
 import { Auth0Provider } from "@auth0/auth0-react";
+const domain = process.env.REACT_APP_AUTH_DOMAIN;
+const clientId = process.env.REACT_APP_CLIENT_ID;
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <Auth0Provider 
-  domain="dev-6rh238w71ypnfie7.us.auth0.com"
-  clientId="RA1XN4OjRbx1R9e290IgoZgSUogZFV0m"
+  domain={domain}
+  clientId={clientId}
   redirectUri={window.location.origin}>
     <AppProvider>
       <FilterContextProvider>
