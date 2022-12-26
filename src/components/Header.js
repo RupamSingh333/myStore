@@ -2,8 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import Nav from "./Nav";
-const SITE_URL = "http://localhost:3000/";
-
+const SITE_URL =  process.env.REACT_APP_SITE_URL;
 const Header = () => {
   return (
     <MainHeader>

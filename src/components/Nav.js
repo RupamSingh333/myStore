@@ -5,10 +5,13 @@ import { FiShoppingCart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
 import { Button } from "../styles/Button";
 import { useAuth0 } from "@auth0/auth0-react";
+import { useCartContext } from "../context/Cart_Context";
 
 const Nav = () => {
   const [menuIcon, setMenuIcon] = useState();
-  const { user, isAuthenticated, isLoading ,loginWithRedirect } = useAuth0();  
+  const { user, logout, isAuthenticated, isLoading, loginWithRedirect } =
+    useAuth0();
+  const { total_item } = useCartContext();
   const Nav = styled.nav`
     .navbar-lists {
       display: flex;
@@ -199,15 +202,24 @@ const Nav = () => {
               Contact
             </NavLink>
           </li>
-
-          <li>
-            <Button onClick={()=>loginWithRedirect()} >Log In</Button>
-          </li>
+          {isAuthenticated && <h3>{user.name}</h3>}
+          {isAuthenticated ? (
+            <li>
+              <Button
+                onClick={() => logout({ returnTo: window.location.origin })}>
+                Log Out
+              </Button>
+            </li>
+          ) : (
+            <li>
+              <Button onClick={() => loginWithRedirect()}>Log In</Button>
+            </li>
+          )}
 
           <li>
             <NavLink to="/cart" className="navbar-link cart-trolley--link">
               <FiShoppingCart className="cart-trolley" />
-              <span className="cart-total--item"> 10 </span>
+              <span className="cart-total--item"> {total_item} </span>
             </NavLink>
           </li>
         </ul>

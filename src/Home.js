@@ -7,7 +7,7 @@ const Home = () => {
   const data = {
     title:"Welcome To",
     name: "Bhawani Electronics.",
-    paragraph:'Lorem ipsum dolor sit amet consectetur adipisicing elit.Molestias atque temporibus veniam doloribus libero ad error omnis voluptates animi! Suscipit sapiente.'
+    paragraph:'Bhawani Electronics Mirganj believes that we are successful only when our customers are happy. Our mission is to set the highest possible standards in our services, reliability and integrity in this industry.'
   }
   return(
   <>

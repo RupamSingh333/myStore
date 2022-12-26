@@ -1,5 +1,7 @@
 import styled from "styled-components";
-const SITE_URL = "http://localhost:3000/";
+const SITE_URL =  process.env.REACT_APP_SITE_URL;
+
+
 
 const Trusted = () => {
   return (
