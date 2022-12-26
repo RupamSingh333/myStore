@@ -1,5 +1,5 @@
 import styled from "styled-components";
-const SITE_URL =  process.env.REACT_APP_SITE_URL;
+// const SITE_URL =  process.env.REACT_APP_SITE_URL;
 
 
 
@@ -12,31 +12,31 @@ const Trusted = () => {
           {/* my 1st img  */}
           <div className="slide">
             <img
-              src={SITE_URL+"images/image1.png"}
+              src=".images/image1.png"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src={SITE_URL+"images/image2.png"}
+              src=".images/image2.png"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src={SITE_URL+"images/image3.png"}
+              src=".images/image3.png"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-             src={SITE_URL+"images/image4.png"}
+             src=".images/image4.png"
               alt="trusted-brands"
             />
           </div>
           <div className="slide">
             <img
-              src={SITE_URL+"images/image5.png"}
+              src=".images/image5.png"
               alt="trusted-brands"
             />
           </div>
