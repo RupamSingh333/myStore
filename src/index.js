@@ -7,6 +7,8 @@ import { AppProvider } from "./context/ProductContext";
 import { FilterContextProvider } from "./context/Filter_Context";
 import { CartProvider } from "./context/Cart_Context";
 import { Auth0Provider } from "@auth0/auth0-react";
+const domain = process.env.REACT_APP_AUTH_DOMAIN;
+const clientId = process.env.REACT_APP_CLIENT_ID;
 const root = ReactDOM.createRoot(document.getElementById("root"));
 const domain = process.env.REACT_APP_AUTH_DOMAIN;
 const clientId = process.env.REACT_APP_CLIENT_ID;
