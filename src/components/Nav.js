@@ -1,17 +1,27 @@
-import React, { useState } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { FiShoppingCart } from "react-icons/fi";
 import { CgMenu, CgClose } from "react-icons/cg";
 import { Button } from "../styles/Button";
-import { useAuth0 } from "@auth0/auth0-react";
 import { useCartContext } from "../context/Cart_Context";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../context/authContext";
 
 const Nav = () => {
+  const { authState, logout } = useContext(AuthContext);
+  const navigate = useNavigate();
   const [menuIcon, setMenuIcon] = useState();
-  const { user, logout, isAuthenticated, isLoading, loginWithRedirect } =
-    useAuth0();
   const { total_item } = useCartContext();
+
+  // useEffect(() => {
+  //   if (authState.isLoggedIn) {
+  //     navigate("/"); // Redirect to home page
+  //   } else {
+  //     navigate("/login");
+  //   }
+  // }, [authState.isLoggedIn,navigate]);
+
   const Nav = styled.nav`
     .navbar-lists {
       display: flex;
@@ -202,17 +212,17 @@ const Nav = () => {
               Contact
             </NavLink>
           </li>
-          {isAuthenticated && <h3>{user.name}</h3>}
-          {isAuthenticated ? (
+          {authState.username && <h3>{authState.username}</h3>}
+          {/* <li></li> */}
+          {authState.isLoggedIn ? (
             <li>
-              <Button
-                onClick={() => logout({ returnTo: window.location.origin })}>
-                Log Out
-              </Button>
+              <Button onClick={logout}>Log Out</Button>
             </li>
           ) : (
             <li>
-              <Button onClick={() => loginWithRedirect()}>Log In</Button>
+              <NavLink to="/login" className="navbar-link ">
+                Log In
+              </NavLink>
             </li>
           )}
 

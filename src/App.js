@@ -11,6 +11,10 @@ import { GlobalStyle } from "./GlobalStyle";
 import { ThemeProvider } from "styled-components";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import LoginForm from "./LoginPage";
+import RegisterUser from "./admin/RegisterUser";
+import RegistrationForm from "./RegistrationForm";
+
 const App = () => {
   const theme = {
     colors: {
@@ -37,6 +41,7 @@ const App = () => {
     },
   };
 
+
   return (
     <ThemeProvider theme={theme}>
       <Router>
@@ -45,6 +50,8 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
+          <Route path="/login" element={<LoginForm />} />
+          <Route path="/register" element={<RegisterUser />} />
           <Route path="/products" element={<Products />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/singleproduct/:id" element={<SingleProduct />} />
